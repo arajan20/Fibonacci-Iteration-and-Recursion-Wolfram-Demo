@@ -1,0 +1,696 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23688,        687]
+NotebookOptionsPosition[     19340,        550]
+NotebookOutlinePosition[     20932,        601]
+CellTagsIndexPosition[     20612,        589]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Iteration and Recursion in the Fibonacci Sequence", "DemoTitle",
+ CellChangeTimes->{{3.673171654222993*^9, 3.6731716606772423`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Initialization", " ", "\[RuleDelayed]", "\[IndentingNewLine]", 
+   RowBox[{"Unprotect", "[", "Sqrt", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"recfxn", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"Sqrt", "[", "5", "]"}]}], ")"}], "/", "2"}], ")"}], "^", 
+      "x"}], ")"}], "/", "10000"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"itfxn", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"x", "*", "1000"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"timeComplex", "[", "n_", "]"}], " ", ":=", " ", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"recfxn", "[", "x", "]"}], ",", " ", 
+       RowBox[{"itfxn", "[", "x", "]"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", "n"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "50"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "100000"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "  ", "\"\<Time Complexity\>\""}], ",", 
+     RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<n\>\"", ",", " ", "time"}], "}"}]}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"itTree", "[", "n_", "]"}], ":=", 
+   RowBox[{"Module", "[", " ", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"itTreeArray", " ", "=", " ", 
+        RowBox[{"{", "}"}]}], ",", " ", 
+       RowBox[{"n0", " ", "=", " ", "n"}]}], "}"}], " ", ",", 
+     "\[IndentingNewLine]", "\t\t\t\t\t", 
+     RowBox[{
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "3"}], ",", 
+        RowBox[{"i", "\[LessEqual]", "n0"}], ",", 
+        RowBox[{"i", "++"}], ",", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"itTreeArray", ",", " ", 
+           RowBox[{
+            RowBox[{"i", "-", "2"}], " ", "\[Rule]", " ", "i"}]}], "]"}], ";",
+          "  ", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"itTreeArray", ",", 
+           RowBox[{
+            RowBox[{"i", "-", "1"}], " ", "\[Rule]", " ", "i"}]}], "]"}]}]}], 
+       "]"}], ";", "\[IndentingNewLine]", "\t\t\t\t\t", 
+      RowBox[{"TreePlot", "[", 
+       RowBox[{"itTreeArray", ",", "Right", ",", "  ", 
+        RowBox[{"VertexLabeling", "\[Rule]", "True"}], ",", " ", 
+        RowBox[{"DirectedEdges", "\[Rule]", "True"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "\t\t\t\t\t", "]"}]}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.673378453616076*^9, 3.673378463101598*^9}, {
+  3.673378520380072*^9, 3.673378541632908*^9}, {3.673378839900013*^9, 
+  3.673378897951207*^9}, {3.6733790620661507`*^9, 3.6733791669459677`*^9}},
+ CellID->428081845]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"GraphicsGrid", "[", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"timeComplex", "[", "n", "]"}], ",", " ", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"itTree", "[", "n", "]"}], "]"}]}], "}"}], "}"}], "]"}], ",", 
+   " ", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", " ", "3", ",", " ", "50"}], "}"}], ",", " ", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6733784737744083`*^9, 3.673378482243342*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 50., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 3, 50}}, Typeset`size$$ = {360., {45., 49.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`n$46568$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 3}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$46568$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> GraphicsGrid[{{
+          $CellContext`timeComplex[$CellContext`n$$], 
+          Graphics[
+           $CellContext`itTree[$CellContext`n$$]]}}], 
+      "Specifications" :> {{$CellContext`n$$, 3, 50}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{403., {88., 93.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`timeComplex[
+         Pattern[$CellContext`n, 
+          Blank[]]] := Plot[{
+          $CellContext`recfxn[$CellContext`x], 
+          $CellContext`itfxn[$CellContext`x]}, {$CellContext`x, 
+          0, $CellContext`n}, PlotRange -> {{0, 50}, {0, 100000}}, PlotLabel -> 
+         "Time Complexity", 
+         AxesLabel -> {"n", $CellContext`time}], $CellContext`recfxn[
+         Pattern[$CellContext`x, 
+          Blank[]]] := ((1 + Sqrt[5])/2)^$CellContext`x/10000, 
+       Attributes[Sqrt] = {Listable, NumericFunction}, $CellContext`itfxn[
+         Pattern[$CellContext`x, 
+          Blank[]]] := $CellContext`x 1000, $CellContext`itTree[
+         Pattern[$CellContext`n, 
+          Blank[]]] := 
+       Module[{$CellContext`itTreeArray = {}, $CellContext`n0 = \
+$CellContext`n}, For[$CellContext`i = 3, $CellContext`i <= $CellContext`n0, 
+           Increment[$CellContext`i], 
+           AppendTo[$CellContext`itTreeArray, $CellContext`i - 
+              2 -> $CellContext`i]; 
+           AppendTo[$CellContext`itTreeArray, $CellContext`i - 
+              1 -> $CellContext`i]]; 
+         TreePlot[$CellContext`itTreeArray, Right, VertexLabeling -> True, 
+           DirectedEdges -> True]], $CellContext`i = 4}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.67337848905291*^9, 3.673378902702858*^9, 
+  3.673379141112133*^9},
+ CellID->957278299]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["\<\
+The Fibonacci sequence begins with the 0 and 1 as the first two terms, and \
+each subsequent number is the sum of the two number immediately prior it. To \
+find the nth number of the Fibonacci sequence, you can use two methods: \
+iteration (work from the initial condition) or recursion (work backwards \
+towards the initial condition). The graphs above compare the time and space \
+complexity of finding the nth number using the two methods of iteration and \
+recursion. \
+\>", "ManipulateCaption",
+ CellChangeTimes->{{3.6732584511070833`*^9, 3.673258649510229*^9}, {
+  3.673258717436849*^9, 3.673258760983101*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {EdgeForm[GrayLevel[0]], FaceForm[GrayLevel[1]], RectangleBox[{0, 0}], 
+   InsetBox[
+    StyleBox["\<\"Thumbnail Placeholder\"\>",
+     StripOnInput->False,
+     FontFamily->"Verdana",
+     FontSize->14], {0.5, 0.6}], InsetBox[
+    StyleBox["\<\"Replace this with your\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5],
+     $CellContext`BackFaceColor -> GrayLevel[0.5]], {0.5, 0.45}], InsetBox[
+    StyleBox["\<\"Manipulate at a particular setting.\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5],
+     $CellContext`BackFaceColor -> GrayLevel[0.5]], {0.5, 0.39}], InsetBox[
+    StyleBox["\<\"(Do not use a bitmap.)\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5],
+     $CellContext`BackFaceColor -> GrayLevel[0.5]], {0.5, 0.315}]},
+  ImageMargins->0.,
+  ImageSize->220]], "Output",
+ CellEditDuplicate->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {EdgeForm[GrayLevel[0]], FaceForm[GrayLevel[1]], RectangleBox[{0, 0}], 
+   InsetBox[
+    StyleBox["\<\"Snapshot Placeholder\"\>",
+     StripOnInput->False,
+     FontFamily->"Verdana",
+     FontSize->14], {0.5, 0.6}], InsetBox[
+    StyleBox["\<\"Replace this with your\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5],
+     $CellContext`BackFaceColor -> GrayLevel[0.5]], {0.5, 0.45}], InsetBox[
+    StyleBox["\<\"Manipulate at a particular setting.\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5],
+     $CellContext`BackFaceColor -> GrayLevel[0.5]], {0.5, 0.39}], InsetBox[
+    StyleBox["\<\"(Do not use a bitmap.)\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5],
+     $CellContext`BackFaceColor -> GrayLevel[0.5]], {0.5, 0.315}]},
+  ImageMargins->0.,
+  ImageSize->220]], "Output",
+ CellEditDuplicate->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell["ADD REFERENCES", "DetailNotes",
+ CellChangeTimes->{{3.6732588517667513`*^9, 3.673258854802207*^9}},
+ CellID->169250777]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["Fibonacci", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.673259344304326*^9}},
+ CellID->1771562424],
+
+Cell["Iteration", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.6732593460875998`*^9}},
+ CellID->1740548482],
+
+Cell["Iterative", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.673259348911574*^9}},
+ CellID->1026981659],
+
+Cell["Recursion", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.6732593501920347`*^9}},
+ CellID->726700763],
+
+Cell["Recursive", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.67325935237525*^9}},
+ CellID->14970670],
+
+Cell["Big O Notation", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.673259355255476*^9}},
+ CellID->1758405254],
+
+Cell["Time Complexity", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.6732593584878817`*^9}},
+ CellID->1069681446],
+
+Cell["Space Complexity", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.673259360575118*^9}},
+ CellID->1925164264],
+
+Cell["Fremd", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.6732593613671837`*^9}},
+ CellID->212228433],
+
+Cell["Ann Rajan", "SearchTerms",
+ CellChangeTimes->{{3.673259342628867*^9, 3.673259362419396*^9}},
+ CellID->1412851291]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Fibonacci Tree",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/FibonacciTree/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/FibonacciTree/"]], "RelatedLinks",
+ CellChangeTimes->{{3.673259439296651*^9, 3.673259458070674*^9}},
+ CellID->1809783138],
+
+Cell[TextData[ButtonBox["Call Graphs of Fibonacci-Like Functions",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/CallGraphsOfFibonacciLikeFunctions/\
+"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/CallGraphsOfFibonacciLikeFunctions/"]], \
+"RelatedLinks",
+ CellChangeTimes->{{3.673259439296651*^9, 3.673259478481154*^9}},
+ CellID->2128840472]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell["Contributed by: Ann Rajan", "Author",
+ CellChangeTimes->{{3.6731723582412577`*^9, 3.673172360310305*^9}, {
+  3.673259281176929*^9, 3.673259281181883*^9}}],
+
+Cell["\<\
+Special thanks to the University of Illinois NetMath Program and the \
+mathematics department at William Fremd High School. \
+\>", "Author",
+ CellChangeTimes->{{3.6731723582412577`*^9, 3.673172360310305*^9}, {
+  3.673259281176929*^9, 3.673259314261717*^9}},
+ CellID->1585153641]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{10, Automatic}, {Automatic, 24}},
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
+2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "AutomaticAnimation"->{
+  Cell[14330, 405, 1464, 31, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[15797, 438, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]},
+ "CreateAndDeleteLocators"->{
+  Cell[12471, 354, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "DragLocators"->{
+  Cell[12128, 341, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "GamepadControls"->{
+  Cell[13958, 394, 369, 9, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "ResizeImages"->{
+  Cell[11132, 313, 312, 8, 29, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[11447, 323, 678, 16, 29, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "SliderZoom"->{
+  Cell[13111, 371, 844, 21, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"AutomaticAnimation", 19727, 562},
+ {"BookmarkAnimation", 19843, 565},
+ {"CreateAndDeleteLocators", 19963, 568},
+ {"DragLocators", 20078, 571},
+ {"GamepadControls", 20185, 574},
+ {"ResizeImages", 20291, 577},
+ {"RotateAndZoomIn3D", 20399, 580},
+ {"SliderZoom", 20506, 583}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 138, 1, 76, "DemoTitle"],
+Cell[CellGroupData[{
+Cell[743, 27, 33, 0, 275, "InitializationSection"],
+Cell[779, 29, 3069, 81, 185, "Input",
+ InitializationCell->True,
+ CellID->428081845]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3885, 115, 29, 0, 243, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[3939, 119, 540, 14, 25, "Input"],
+Cell[4482, 135, 3049, 62, 193, "Output",
+ CellID->957278299]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7580, 203, 36, 0, 181, "ManipulateCaptionSection"],
+Cell[7619, 205, 626, 10, 55, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8282, 220, 28, 0, 179, "ThumbnailSection"],
+Cell[8313, 222, 1242, 34, 230, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9592, 261, 28, 0, 149, "SnapshotsSection"],
+Cell[9623, 263, 1241, 34, 230, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10901, 302, 26, 0, 357, "DetailsSection"],
+Cell[10930, 304, 125, 2, 23, "DetailNotes",
+ CellID->169250777]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11092, 311, 37, 0, 131, "ControlSuggestionsSection"],
+Cell[11132, 313, 312, 8, 29, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[11447, 323, 678, 16, 29, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[12128, 341, 340, 11, 29, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[12471, 354, 637, 15, 29, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[13111, 371, 844, 21, 29, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[13958, 394, 369, 9, 29, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[14330, 405, 1464, 31, 29, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[15797, 438, 908, 21, 29, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16742, 464, 30, 0, 165, "SearchTermsSection"],
+Cell[16775, 466, 119, 2, 23, "SearchTerms",
+ CellID->1771562424],
+Cell[16897, 470, 121, 2, 23, "SearchTerms",
+ CellID->1740548482],
+Cell[17021, 474, 119, 2, 23, "SearchTerms",
+ CellID->1026981659],
+Cell[17143, 478, 120, 2, 23, "SearchTerms",
+ CellID->726700763],
+Cell[17266, 482, 116, 2, 23, "SearchTerms",
+ CellID->14970670],
+Cell[17385, 486, 124, 2, 23, "SearchTerms",
+ CellID->1758405254],
+Cell[17512, 490, 127, 2, 23, "SearchTerms",
+ CellID->1069681446],
+Cell[17642, 494, 126, 2, 23, "SearchTerms",
+ CellID->1925164264],
+Cell[17771, 498, 116, 2, 23, "SearchTerms",
+ CellID->212228433],
+Cell[17890, 502, 119, 2, 23, "SearchTerms",
+ CellID->1412851291]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18046, 509, 31, 0, 149, "RelatedLinksSection"],
+Cell[18080, 511, 321, 7, 23, "RelatedLinks",
+ CellID->1809783138],
+Cell[18404, 520, 392, 9, 23, "RelatedLinks",
+ CellID->2128840472]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18833, 534, 25, 0, 149, "AuthorSection"],
+Cell[18861, 536, 160, 2, 23, "Author"],
+Cell[19024, 540, 288, 6, 23, "Author",
+ CellID->1585153641]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
