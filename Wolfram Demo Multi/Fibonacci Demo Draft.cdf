@@ -1,27 +1,39 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
+(* Content-type: application/vnd.wolfram.cdf.text *)
 
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
 
 (* CreatedBy='Mathematica 10.2' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*  The Mathematica License under which this file was created prohibits  *)
+(*  restricting third parties in receipt of this file from republishing  *)
+(*  or redistributing it by any means, including but not limited to      *)
+(*  rights management or terms of use, without the express consent of    *)
+(*  Wolfram Research, Inc. For additional information concerning CDF     *)
+(*  licensing and redistribution see:                                    *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*************************************************************************)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     28971,        798]
-NotebookOptionsPosition[     24479,        657]
-NotebookOutlinePosition[     26071,        708]
-CellTagsIndexPosition[     25751,        696]
+NotebookDataPosition[      1064,         20]
+NotebookDataLength[     25600,        749]
+NotebookOptionsPosition[     21935,        617]
+NotebookOutlinePosition[     23619,        672]
+CellTagsIndexPosition[     23299,        660]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Iteration and Recursion in the Fibonacci Sequence", "DemoTitle",
- CellChangeTimes->{{3.673171654222993*^9, 3.6731716606772423`*^9}}],
+Cell["Iteration and Recursion in the Fibonacci Sequence", "DemoTitle"],
 
 Cell[CellGroupData[{
 
@@ -138,13 +150,6 @@ Cell[BoxData[{
     "\[IndentingNewLine]", "\t\t\t\t\t", 
     "]"}]}]}], "\[IndentingNewLine]"}], "Input",
  InitializationCell->True,
- CellChangeTimes->{{3.673378453616076*^9, 3.673378463101598*^9}, {
-  3.673378520380072*^9, 3.673378541632908*^9}, {3.673378839900013*^9, 
-  3.673378897951207*^9}, {3.6733790620661507`*^9, 3.6733791669459677`*^9}, {
-  3.673380113481393*^9, 3.6733802373885803`*^9}, {3.673396210283119*^9, 
-  3.673396214852754*^9}, {3.673396462890524*^9, 3.673396467078384*^9}, {
-  3.673399003569476*^9, 3.673399009224875*^9}, {3.673399068831584*^9, 
-  3.6733990698854523`*^9}},
  CellID->428081845]
 }, Open  ]],
 
@@ -178,13 +183,7 @@ Cell[BoxData[
      RowBox[{"Frame", " ", "\[Rule]", " ", "All"}]}], "]"}], ",", " ", 
    RowBox[{"{", 
     RowBox[{"n", ",", " ", "3", ",", " ", "50"}], "}"}], ",", " ", 
-   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.6733784737744083`*^9, 3.673378482243342*^9}, {
-   3.6733795369491577`*^9, 3.673379561808497*^9}, {3.6733798147376738`*^9, 
-   3.6733798276090527`*^9}, {3.673379935371913*^9, 3.673379953865322*^9}, {
-   3.6733800036161537`*^9, 3.673380024683915*^9}, 3.673396227047888*^9, {
-   3.6733972149303503`*^9, 3.673397250860709*^9}, {3.673399082798674*^9, 
-   3.673399090316123*^9}}],
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input"],
 
 Cell[BoxData[
  TagBox[
@@ -259,12 +258,6 @@ $CellContext`n}, For[$CellContext`i = 3, $CellContext`i <= $CellContext`n0,
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{
-  3.67337848905291*^9, 3.673378902702858*^9, 3.673379141112133*^9, {
-   3.673379541350286*^9, 3.673379557540717*^9}, 3.673379828929928*^9, {
-   3.673379937730073*^9, 3.673379960856473*^9}, {3.673380019154183*^9, 
-   3.673380025418507*^9}, 3.67338014176539*^9, 3.673396227788368*^9, 
-   3.673397254743103*^9, 3.673399091703189*^9},
  CellID->1955058437]
 }, Open  ]]
 }, Open  ]],
@@ -282,12 +275,7 @@ towards the initial condition). The graphs above compare the time and space \
 complexity of finding the nth number using the two methods of iteration and \
 recursion. Additionally, the tree above shows the iterative method by which \
 the elements are calculated. \
-\>", "ManipulateCaption",
- CellChangeTimes->{{3.6732584511070833`*^9, 3.673258649510229*^9}, {
-  3.673258717436849*^9, 3.673258760983101*^9}, {3.6733961792215967`*^9, 
-  3.673396186405085*^9}, {3.673396243660383*^9, 3.67339626628216*^9}, {
-  3.673398624678698*^9, 3.673398635228581*^9}, {3.673399416673032*^9, 
-  3.673399434903976*^9}}]
+\>", "ManipulateCaption"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -384,10 +372,6 @@ time complexity. The iterative time complexity relates directly to the number \
 of elements. The space complexity is directly related to the number of \
 elements for both the iterative and recursive methods. \
 \>", "DetailNotes",
- CellChangeTimes->{{3.673398817731863*^9, 3.6733988331879997`*^9}, {
-   3.673398906873476*^9, 3.673398951262411*^9}, 3.673399016808325*^9, {
-   3.67339905130284*^9, 3.673399053916958*^9}, {3.673399117164297*^9, 
-   3.673399243531271*^9}, {3.673399313519517*^9, 3.6733993135235043`*^9}},
  CellID->1523787809],
 
 Cell["\<\
@@ -396,10 +380,6 @@ calculation. For example, to compute the third element, the values from the \
 first and second element are used. To compute the fourth element, the values \
 from the second and third element are used. \
 \>", "DetailNotes",
- CellChangeTimes->{{3.673398817731863*^9, 3.6733988331879997`*^9}, {
-   3.673398906873476*^9, 3.673398951262411*^9}, 3.673399016808325*^9, {
-   3.67339905130284*^9, 3.673399053916958*^9}, {3.673399117164297*^9, 
-   3.673399243531271*^9}, {3.673399313519517*^9, 3.6733994074361343`*^9}},
  CellID->1626041038],
 
 Cell[TextData[{
@@ -408,9 +388,6 @@ Cell[TextData[{
   FontSlant->"Italic"],
  "Cambridge: Massachusetts Institute of Technology, 2009. "
 }], "DetailNotes",
- CellChangeTimes->{{3.6732588517667513`*^9, 3.673258854802207*^9}, {
-   3.673396010043314*^9, 3.6733960419543447`*^9}, {3.673396084682461*^9, 
-   3.673396164021803*^9}, 3.673398815927375*^9},
  CellID->1343130830]
 }, Open  ]],
 
@@ -506,7 +483,6 @@ Cell[BoxData[
   "\"Control this Demonstration with a gamepad or other\\nhuman interface \
 device connected to your computer.\"",
   TooltipDelay->0.35]], "ControlSuggestions",
- CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
  FontFamily->"Verdana",
  CellTags->"GamepadControls"],
 
@@ -572,43 +548,33 @@ Cell[CellGroupData[{
 Cell["", "SearchTermsSection"],
 
 Cell["Fibonacci", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.673259344304326*^9}},
  CellID->1771562424],
 
 Cell["Iteration", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.6732593460875998`*^9}},
  CellID->1740548482],
 
 Cell["Iterative", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.673259348911574*^9}},
  CellID->1026981659],
 
 Cell["Recursion", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.6732593501920347`*^9}},
  CellID->726700763],
 
 Cell["Recursive", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.67325935237525*^9}},
  CellID->14970670],
 
 Cell["Big O Notation", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.673259355255476*^9}},
  CellID->1758405254],
 
 Cell["Time Complexity", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.6732593584878817`*^9}},
  CellID->1069681446],
 
 Cell["Space Complexity", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.673259360575118*^9}},
  CellID->1925164264],
 
 Cell["Fremd", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.6732593613671837`*^9}},
  CellID->212228433],
 
 Cell["Ann Rajan", "SearchTerms",
- CellChangeTimes->{{3.673259342628867*^9, 3.673259362419396*^9}},
  CellID->1412851291]
 }, Open  ]],
 
@@ -622,7 +588,6 @@ Cell[TextData[ButtonBox["Fibonacci Tree",
    URL["http://demonstrations.wolfram.com/FibonacciTree/"], None},
  ButtonNote->
   "http://demonstrations.wolfram.com/FibonacciTree/"]], "RelatedLinks",
- CellChangeTimes->{{3.673259439296651*^9, 3.673259458070674*^9}},
  CellID->1809783138],
 
 Cell[TextData[ButtonBox["Call Graphs of Fibonacci-Like Functions",
@@ -633,7 +598,6 @@ Cell[TextData[ButtonBox["Call Graphs of Fibonacci-Like Functions",
  ButtonNote->
   "http://demonstrations.wolfram.com/CallGraphsOfFibonacciLikeFunctions/"]], \
 "RelatedLinks",
- CellChangeTimes->{{3.673259439296651*^9, 3.673259478481154*^9}},
  CellID->2128840472]
 }, Open  ]],
 
@@ -641,22 +605,22 @@ Cell[CellGroupData[{
 
 Cell["", "AuthorSection"],
 
-Cell["Contributed by: Ann Rajan", "Author",
- CellChangeTimes->{{3.6731723582412577`*^9, 3.673172360310305*^9}, {
-  3.673259281176929*^9, 3.673259281181883*^9}}],
+Cell["Contributed by: Ann Rajan", "Author"],
 
 Cell["\<\
 Special thanks to the University of Illinois NetMath Program and the \
 mathematics department at William Fremd High School. \
 \>", "Author",
- CellChangeTimes->{{3.6731723582412577`*^9, 3.673172360310305*^9}, {
-  3.673259281176929*^9, 3.673259314261717*^9}},
  CellID->1585153641]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{Full, Full},
-WindowMargins->{{10, Automatic}, {Automatic, 24}},
+Visible->True,
+ScrollingOptions->{"VerticalScrollRange"->Fit},
+ShowCellBracket->Automatic,
+CellContext->Notebook,
+TrackCellChangeTimes->False,
 FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
 2015)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
@@ -667,136 +631,136 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb",
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "AutomaticAnimation"->{
-  Cell[19469, 512, 1464, 31, 29, "ControlSuggestions",
-   CellTags->"AutomaticAnimation"]},
- "BookmarkAnimation"->{
-  Cell[20936, 545, 908, 21, 29, "ControlSuggestions",
-   CellTags->"BookmarkAnimation"]},
- "CreateAndDeleteLocators"->{
-  Cell[17610, 461, 637, 15, 29, "ControlSuggestions",
-   CellTags->"CreateAndDeleteLocators"]},
- "DragLocators"->{
-  Cell[17267, 448, 340, 11, 29, "ControlSuggestions",
-   CellTags->"DragLocators"]},
- "GamepadControls"->{
-  Cell[19097, 501, 369, 9, 29, "ControlSuggestions",
-   CellTags->"GamepadControls"]},
  "ResizeImages"->{
-  Cell[16271, 420, 312, 8, 29, "ControlSuggestions",
+  Cell[14825, 397, 312, 8, 29, "ControlSuggestions",
    CellTags->"ResizeImages"]},
  "RotateAndZoomIn3D"->{
-  Cell[16586, 430, 678, 16, 29, "ControlSuggestions",
+  Cell[15140, 407, 678, 16, 29, "ControlSuggestions",
    CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[15821, 425, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[16164, 438, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
  "SliderZoom"->{
-  Cell[18250, 478, 844, 21, 29, "ControlSuggestions",
-   CellTags->"SliderZoom"]}
+  Cell[16804, 455, 844, 21, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[17651, 478, 304, 8, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[17958, 488, 1464, 31, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[19425, 521, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"AutomaticAnimation", 24866, 669},
- {"BookmarkAnimation", 24982, 672},
- {"CreateAndDeleteLocators", 25102, 675},
- {"DragLocators", 25217, 678},
- {"GamepadControls", 25324, 681},
- {"ResizeImages", 25430, 684},
- {"RotateAndZoomIn3D", 25538, 687},
- {"SliderZoom", 25645, 690}
+ {"ResizeImages", 22408, 633},
+ {"RotateAndZoomIn3D", 22516, 636},
+ {"DragLocators", 22625, 639},
+ {"CreateAndDeleteLocators", 22740, 642},
+ {"SliderZoom", 22853, 645},
+ {"GamepadControls", 22958, 648},
+ {"AutomaticAnimation", 23070, 651},
+ {"BookmarkAnimation", 23186, 654}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 138, 1, 76, "DemoTitle"],
+Cell[1486, 35, 70, 0, 76, "DemoTitle"],
 Cell[CellGroupData[{
-Cell[743, 27, 33, 0, 275, "InitializationSection"],
-Cell[779, 29, 4501, 118, 280, "Input",
+Cell[1581, 39, 33, 0, 275, "InitializationSection"],
+Cell[1617, 41, 4041, 111, 280, "Input",
  InitializationCell->True,
  CellID->428081845]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5317, 152, 29, 0, 243, "ManipulateSection"],
+Cell[5695, 157, 29, 0, 243, "ManipulateSection"],
 Cell[CellGroupData[{
-Cell[5371, 156, 1336, 30, 41, "Input"],
-Cell[6710, 188, 3996, 79, 391, "Output",
+Cell[5749, 161, 940, 24, 41, "Input"],
+Cell[6692, 187, 3645, 73, 391, "Output",
  CellID->1955058437]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10755, 273, 36, 0, 181, "ManipulateCaptionSection"],
-Cell[10794, 275, 916, 14, 55, "ManipulateCaption"]
+Cell[10386, 266, 36, 0, 181, "ManipulateCaptionSection"],
+Cell[10425, 268, 605, 9, 55, "ManipulateCaption"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11747, 294, 28, 0, 179, "ThumbnailSection"],
-Cell[11778, 296, 1242, 34, 230, "Output"]
+Cell[11067, 282, 28, 0, 179, "ThumbnailSection"],
+Cell[11098, 284, 1242, 34, 230, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13057, 335, 28, 0, 149, "SnapshotsSection"],
-Cell[13088, 337, 1241, 34, 230, "Output"]
+Cell[12377, 323, 28, 0, 149, "SnapshotsSection"],
+Cell[12408, 325, 1241, 34, 230, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14366, 376, 26, 0, 357, "DetailsSection"],
-Cell[14395, 378, 781, 12, 55, "DetailNotes",
+Cell[13686, 364, 26, 0, 357, "DetailsSection"],
+Cell[13715, 366, 494, 8, 55, "DetailNotes",
  CellID->1523787809],
-Cell[15179, 392, 616, 10, 39, "DetailNotes",
+Cell[14212, 376, 329, 6, 39, "DetailNotes",
  CellID->1626041038],
-Cell[15798, 404, 396, 9, 23, "DetailNotes",
+Cell[14544, 384, 204, 6, 23, "DetailNotes",
  CellID->1343130830]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16231, 418, 37, 0, 131, "ControlSuggestionsSection"],
-Cell[16271, 420, 312, 8, 29, "ControlSuggestions",
+Cell[14785, 395, 37, 0, 131, "ControlSuggestionsSection"],
+Cell[14825, 397, 312, 8, 29, "ControlSuggestions",
  CellTags->"ResizeImages"],
-Cell[16586, 430, 678, 16, 29, "ControlSuggestions",
+Cell[15140, 407, 678, 16, 29, "ControlSuggestions",
  CellTags->"RotateAndZoomIn3D"],
-Cell[17267, 448, 340, 11, 29, "ControlSuggestions",
+Cell[15821, 425, 340, 11, 29, "ControlSuggestions",
  CellTags->"DragLocators"],
-Cell[17610, 461, 637, 15, 29, "ControlSuggestions",
+Cell[16164, 438, 637, 15, 29, "ControlSuggestions",
  CellTags->"CreateAndDeleteLocators"],
-Cell[18250, 478, 844, 21, 29, "ControlSuggestions",
+Cell[16804, 455, 844, 21, 29, "ControlSuggestions",
  CellTags->"SliderZoom"],
-Cell[19097, 501, 369, 9, 29, "ControlSuggestions",
+Cell[17651, 478, 304, 8, 29, "ControlSuggestions",
  CellTags->"GamepadControls"],
-Cell[19469, 512, 1464, 31, 29, "ControlSuggestions",
+Cell[17958, 488, 1464, 31, 29, "ControlSuggestions",
  CellTags->"AutomaticAnimation"],
-Cell[20936, 545, 908, 21, 29, "ControlSuggestions",
+Cell[19425, 521, 908, 21, 29, "ControlSuggestions",
  CellTags->"BookmarkAnimation"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21881, 571, 30, 0, 165, "SearchTermsSection"],
-Cell[21914, 573, 119, 2, 23, "SearchTerms",
+Cell[20370, 547, 30, 0, 165, "SearchTermsSection"],
+Cell[20403, 549, 53, 1, 23, "SearchTerms",
  CellID->1771562424],
-Cell[22036, 577, 121, 2, 23, "SearchTerms",
+Cell[20459, 552, 53, 1, 23, "SearchTerms",
  CellID->1740548482],
-Cell[22160, 581, 119, 2, 23, "SearchTerms",
+Cell[20515, 555, 53, 1, 23, "SearchTerms",
  CellID->1026981659],
-Cell[22282, 585, 120, 2, 23, "SearchTerms",
+Cell[20571, 558, 52, 1, 23, "SearchTerms",
  CellID->726700763],
-Cell[22405, 589, 116, 2, 23, "SearchTerms",
+Cell[20626, 561, 51, 1, 23, "SearchTerms",
  CellID->14970670],
-Cell[22524, 593, 124, 2, 23, "SearchTerms",
+Cell[20680, 564, 58, 1, 23, "SearchTerms",
  CellID->1758405254],
-Cell[22651, 597, 127, 2, 23, "SearchTerms",
+Cell[20741, 567, 59, 1, 23, "SearchTerms",
  CellID->1069681446],
-Cell[22781, 601, 126, 2, 23, "SearchTerms",
+Cell[20803, 570, 60, 1, 23, "SearchTerms",
  CellID->1925164264],
-Cell[22910, 605, 116, 2, 23, "SearchTerms",
+Cell[20866, 573, 48, 1, 23, "SearchTerms",
  CellID->212228433],
-Cell[23029, 609, 119, 2, 23, "SearchTerms",
+Cell[20917, 576, 53, 1, 23, "SearchTerms",
  CellID->1412851291]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23185, 616, 31, 0, 149, "RelatedLinksSection"],
-Cell[23219, 618, 321, 7, 23, "RelatedLinks",
+Cell[21007, 582, 31, 0, 149, "RelatedLinksSection"],
+Cell[21041, 584, 255, 6, 23, "RelatedLinks",
  CellID->1809783138],
-Cell[23543, 627, 392, 9, 23, "RelatedLinks",
+Cell[21299, 592, 326, 8, 23, "RelatedLinks",
  CellID->2128840472]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23972, 641, 25, 0, 149, "AuthorSection"],
-Cell[24000, 643, 160, 2, 23, "Author"],
-Cell[24163, 647, 288, 6, 23, "Author",
+Cell[21662, 605, 25, 0, 149, "AuthorSection"],
+Cell[21690, 607, 43, 0, 23, "Author"],
+Cell[21736, 609, 171, 4, 23, "Author",
  CellID->1585153641]
 }, Open  ]]
 }, Open  ]]
@@ -805,3 +769,5 @@ Cell[24163, 647, 288, 6, 23, "Author",
 *)
 
 (* End of internal cache information *)
+
+(* NotebookSignature swpYhlcbRIFVHBwYZ@81XxEY *)
