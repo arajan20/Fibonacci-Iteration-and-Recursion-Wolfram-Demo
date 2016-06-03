@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     36037,        954]
-NotebookOptionsPosition[     31478,        811]
-NotebookOutlinePosition[     33070,        862]
-CellTagsIndexPosition[     32750,        850]
+NotebookDataLength[     43513,       1114]
+NotebookOptionsPosition[     38813,        967]
+NotebookOutlinePosition[     40407,       1018]
+CellTagsIndexPosition[     40086,       1006]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -35,19 +35,17 @@ Cell[BoxData[{
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"recFxnTime", "[", "x_", "]"}], " ", ":=", " ", 
-   RowBox[{
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{"1", "+", 
-          RowBox[{"Sqrt", "[", "5", "]"}]}], ")"}], "/", "2"}], ")"}], "^", 
-      "x"}], ")"}], "/", "1000"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"Sqrt", "[", "5", "]"}]}], ")"}], "/", "2"}], ")"}], "^", 
+     "x"}], ")"}]}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"itFxnTime", "[", "x_", "]"}], " ", ":=", " ", 
-   RowBox[{"x", "*", "1000"}]}], 
+   RowBox[{"itFxnTime", "[", "x_", "]"}], " ", ":=", " ", "x"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
@@ -64,14 +62,30 @@ Cell[BoxData[{
       RowBox[{"{", 
        RowBox[{
         RowBox[{"{", 
-         RowBox[{"0", ",", " ", "20"}], "}"}], ",", 
+         RowBox[{"0", ",", " ", "10"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"0", ",", "100000"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"0", ",", "100"}], "}"}]}], "}"}]}], ",", 
      RowBox[{"PlotLabel", "\[Rule]", "  ", "\"\<Time Complexity\>\""}], ",", 
      RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
       RowBox[{"{", 
-       RowBox[{"\"\<n\>\"", ",", " ", "time"}], "}"}]}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+       RowBox[{"\"\<n\>\"", ",", " ", "time"}], "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"Placed", "[", 
+       RowBox[{
+        RowBox[{"LineLegend", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"\"\<recursive\>\"", ",", " ", "\"\<iterative\>\""}], 
+           "}"}], ",", 
+          RowBox[{"LegendFunction", "\[Rule]", "\"\<Frame\>\""}], ",", 
+          RowBox[{"LegendLayout", "\[Rule]", "\"\<Column\>\""}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.25", ",", "0.5"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.25", ",", "0.1"}], "}"}]}], "}"}]}], "]"}]}]}], "]"}]}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"recFxnSpace", "[", "x_", "]"}], " ", ":=", " ", 
@@ -95,18 +109,35 @@ Cell[BoxData[{
       RowBox[{"{", 
        RowBox[{
         RowBox[{"{", 
-         RowBox[{"0", ",", " ", "20"}], "}"}], ",", 
+         RowBox[{"0", ",", " ", "10"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"0", ",", "100"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"0", ",", "20"}], "}"}]}], "}"}]}], ",", 
      RowBox[{"PlotLabel", "\[Rule]", "  ", "\"\<Space Complexity\>\""}], ",", 
      
      RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
       RowBox[{"{", 
-       RowBox[{"\"\<n\>\"", ",", " ", "space"}], "}"}]}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+       RowBox[{"\"\<n\>\"", ",", " ", "space"}], "}"}]}], ",", " ", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"Placed", "[", 
+       RowBox[{
+        RowBox[{"LineLegend", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"\"\<recursive\>\"", ",", " ", "\"\<iterative\>\""}], 
+           "}"}], ",", 
+          RowBox[{"LegendFunction", "\[Rule]", "\"\<Frame\>\""}], ",", 
+          RowBox[{"LegendLayout", "\[Rule]", "\"\<Column\>\""}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.25", ",", "0.5"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.25", ",", "0.1"}], "}"}]}], "}"}]}], "]"}]}]}], "]"}]}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"itTree", "[", "n_", "]"}], ":=", 
+   RowBox[{"itTree", "[", 
+    RowBox[{"n_", ",", " ", "co_"}], "]"}], ":=", 
    RowBox[{"Module", "[", " ", 
     RowBox[{
      RowBox[{"{", 
@@ -142,7 +173,11 @@ Cell[BoxData[{
            RowBox[{"Inset", "[", 
             RowBox[{"#2", ",", "#1", ",", 
              RowBox[{"Background", "\[Rule]", "White"}]}], "]"}], "&"}], 
-          ")"}]}]}], "]"}]}]}], "\[IndentingNewLine]", "\t\t\t\t\t", "]"}]}], 
+          ")"}]}], ",", " ", 
+        RowBox[{"PlotStyle", "\[Rule]", " ", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Hue", "[", "co", "]"}], "]"}]}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "\t\t\t\t\t", "]"}]}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{"Clear", "[", 
@@ -193,7 +228,8 @@ Cell[BoxData[{
  RowBox[{"\t", 
   RowBox[{
    RowBox[{
-    RowBox[{"recTree", "[", "n_", "]"}], " ", ":=", 
+    RowBox[{"recTree", "[", 
+     RowBox[{"n_", ",", " ", "co_"}], "]"}], " ", ":=", 
     RowBox[{"TreePlot", "[", 
      RowBox[{
       RowBox[{"j", "[", "n", "]"}], ",", "Top", ",", 
@@ -208,7 +244,13 @@ Cell[BoxData[{
             RowBox[{"{", 
              RowBox[{"Last", "[", "#2", "]"}], "}"}], "]"}], ",", "#1", ",", 
            RowBox[{"Background", "\[Rule]", "White"}]}], "]"}], "&"}], 
-        ")"}]}]}], "]"}]}], ";"}]}], "\[IndentingNewLine]"}], "Input",
+        ")"}]}], ",", " ", 
+      RowBox[{"PlotRangePadding", "\[Rule]", "0"}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", " ", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"Hue", "[", "co", "]"}], "]"}]}], ",", " ", 
+      RowBox[{"AspectRatio", "\[Rule]", "0.7"}]}], "]"}]}], 
+   ";"}]}], "\[IndentingNewLine]"}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.673378453616076*^9, 3.673378463101598*^9}, {
    3.673378520380072*^9, 3.673378541632908*^9}, {3.673378839900013*^9, 
@@ -223,7 +265,20 @@ Cell[BoxData[{
    3.6737687990594587`*^9, 3.673768800515141*^9}, {3.673768854067444*^9, 
    3.673768854265046*^9}, {3.673768893754245*^9, 3.6737689024387827`*^9}, {
    3.6737787505289*^9, 3.673778771741683*^9}, {3.6737790851104727`*^9, 
-   3.6737790873083*^9}, 3.6737791679817553`*^9},
+   3.6737790873083*^9}, 3.6737791679817553`*^9, {3.6738217753210907`*^9, 
+   3.673821793686055*^9}, {3.673822591013309*^9, 3.673822596124154*^9}, {
+   3.673822680061904*^9, 3.673822685126211*^9}, {3.6738231057456837`*^9, 
+   3.6738231382848663`*^9}, {3.673823173598287*^9, 3.673823264234449*^9}, {
+   3.67390917730964*^9, 3.673909247986731*^9}, {3.6739097582872477`*^9, 
+   3.673909815140437*^9}, {3.673909867163554*^9, 3.673909932824821*^9}, {
+   3.673910264248475*^9, 3.673910330411689*^9}, {3.673910361621027*^9, 
+   3.673910453192706*^9}, {3.673911263687199*^9, 3.673911264477763*^9}, {
+   3.6739142305210733`*^9, 3.673914332400066*^9}, {3.673914548355394*^9, 
+   3.6739145490300617`*^9}, {3.673914585847013*^9, 3.673914594214593*^9}, {
+   3.673914626972077*^9, 3.673914640810644*^9}, {3.673914700233378*^9, 
+   3.673914736263301*^9}, {3.6739148731784678`*^9, 3.673914876078628*^9}, {
+   3.673915016218748*^9, 3.673915061390771*^9}, {3.673915303757328*^9, 
+   3.673915337789439*^9}},
  CellID->428081845]
 }, Open  ]],
 
@@ -249,7 +304,8 @@ Cell[BoxData[
          RowBox[{"Show", "[", 
           RowBox[{
            RowBox[{"Graphics", "[", 
-            RowBox[{"itTree", "[", "n", "]"}], "]"}], ",", " ", 
+            RowBox[{"itTree", "[", 
+             RowBox[{"n", ",", " ", "co"}], "]"}], "]"}], ",", " ", 
            RowBox[{
            "PlotLabel", " ", "\[Rule]", " ", "\"\<Iterative Tree\>\""}], ",", 
            " ", 
@@ -259,7 +315,8 @@ Cell[BoxData[
          RowBox[{"Show", "[", 
           RowBox[{
            RowBox[{"Graphics", "[", 
-            RowBox[{"recTree", "[", "n", "]"}], "]"}], ",", " ", 
+            RowBox[{"recTree", "[", 
+             RowBox[{"n", ",", " ", "co"}], "]"}], "]"}], ",", " ", 
            RowBox[{
            "PlotLabel", " ", "\[Rule]", " ", "\"\<Recursive Tree\>\""}], ",", 
            
@@ -267,11 +324,15 @@ Cell[BoxData[
             RowBox[{"{", 
              RowBox[{"200", ",", "150"}], "}"}]}]}], "]"}]}], "}"}]}], "}"}], 
      ",", "  ", 
-     RowBox[{"Alignment", " ", "\[Rule]", " ", "Center"}], ",", 
+     RowBox[{"Alignment", " ", "\[Rule]", 
+      RowBox[{"{", " ", 
+       RowBox[{"Center", ",", " ", "Top"}], "}"}]}], ",", 
      RowBox[{"Frame", " ", "\[Rule]", " ", "All"}]}], "]"}], ",", " ", 
    RowBox[{"{", 
-    RowBox[{"n", ",", " ", "2", ",", " ", "20", ",", " ", "1"}], "}"}], ",", 
+    RowBox[{"n", ",", " ", "2", ",", " ", "10", ",", " ", "1"}], "}"}], ",", 
    " ", 
+   RowBox[{"{", 
+    RowBox[{"co", ",", " ", "0", ",", "1"}], "}"}], ",", " ", 
    RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.6733784737744083`*^9, 3.673378482243342*^9}, {
    3.6733795369491577`*^9, 3.673379561808497*^9}, {3.6733798147376738`*^9, 
@@ -288,102 +349,180 @@ Cell[BoxData[
    3.673778350789549*^9, 3.673778353259857*^9}, {3.673778407050926*^9, 
    3.673778421864971*^9}, {3.673778509814723*^9, 3.673778561275766*^9}, {
    3.673778606667803*^9, 3.6737786730404*^9}, {3.673778711113076*^9, 
-   3.673778727686421*^9}, {3.67377876200945*^9, 3.673778762802507*^9}}],
+   3.673778727686421*^9}, {3.67377876200945*^9, 3.673778762802507*^9}, {
+   3.6738211577766647`*^9, 3.673821161357038*^9}, {3.6738212022448893`*^9, 
+   3.673821216614066*^9}, {3.673821552644559*^9, 3.6738215535673037`*^9}, {
+   3.6738218217796392`*^9, 3.67382182248223*^9}, {3.673822269922793*^9, 
+   3.673822293951132*^9}, {3.6738223246156693`*^9, 3.673822355494779*^9}, {
+   3.673822392036758*^9, 3.673822400276165*^9}, {3.673822434882435*^9, 
+   3.673822470247589*^9}, {3.6738231501979218`*^9, 3.673823153453267*^9}, {
+   3.67382657475741*^9, 3.673826575548236*^9}, {3.673911187975656*^9, 
+   3.673911214056319*^9}, {3.673914566772627*^9, 3.673914570548317*^9}, {
+   3.6739147566536207`*^9, 3.673914775779394*^9}, 3.6739148812231407`*^9, {
+   3.673915065477429*^9, 3.673915069443358*^9}, {3.6739152678126287`*^9, 
+   3.6739152852930737`*^9}, {3.6739153559786873`*^9, 3.673915398398611*^9}}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`n$$ = 11, Typeset`show$$ = True, 
+   DynamicModuleBox[{CloudObject`Private`co$$ = RGBColor[0, 0, 1], 
+    CloudObject`Private`n$$ = 2, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`n$$], 2, 20, 1}}, Typeset`size$$ = {
+      Hold[CloudObject`Private`n$$], 2, 10, 1}, {
+      Hold[CloudObject`Private`co$$], 0, 1}}, Typeset`size$$ = {
     439., {164., 168.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = False, $CellContext`n$334930$$ = 0}, 
+    Typeset`skipInitDone$$ = False, CloudObject`Private`n$73381$$ = 0, 
+    CloudObject`Private`co$73382$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`n$$ = 2}, 
+     1, StandardForm, 
+      "Variables" :> {
+       CloudObject`Private`co$$ = 0, CloudObject`Private`n$$ = 2}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`n$$, $CellContext`n$334930$$, 0]}, 
+        Hold[CloudObject`Private`n$$, CloudObject`Private`n$73381$$, 0], 
+        Hold[CloudObject`Private`co$$, CloudObject`Private`co$73382$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> GraphicsGrid[{{
-          $CellContext`timeComplex[$CellContext`n$$], 
-          $CellContext`spaceComplex[$CellContext`n$$]}, {
+          CloudObject`Private`timeComplex[CloudObject`Private`n$$], 
+          CloudObject`Private`spaceComplex[CloudObject`Private`n$$]}, {
           Show[
            Graphics[
-            $CellContext`itTree[$CellContext`n$$]], PlotLabel -> 
+            CloudObject`Private`itTree[
+            CloudObject`Private`n$$, CloudObject`Private`co$$]], PlotLabel -> 
            "Iterative Tree", ImageSize -> {200, 150}], 
           Show[
            Graphics[
-            $CellContext`recTree[$CellContext`n$$]], PlotLabel -> 
-           "Recursive Tree", ImageSize -> {200, 150}]}}, Alignment -> Center, 
-        Frame -> All], "Specifications" :> {{$CellContext`n$$, 2, 20, 1}}, 
-      "Options" :> {}, "DefaultOptions" :> {ControllerLinking -> True}],
-     ImageSizeCache->{482., {207., 212.}},
+            CloudObject`Private`recTree[
+            CloudObject`Private`n$$, CloudObject`Private`co$$]], PlotLabel -> 
+           "Recursive Tree", ImageSize -> {200, 150}]}}, 
+        Alignment -> {Center, Top}, Frame -> All], 
+      "Specifications" :> {{CloudObject`Private`n$$, 2, 10, 1}, {
+        CloudObject`Private`co$$, 0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{482., {221., 226.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
-    Initialization:>({$CellContext`timeComplex[
-         Pattern[$CellContext`n, 
+    Initialization:>({CloudObject`Private`timeComplex[
+         Pattern[CloudObject`Private`n, 
           Blank[]]] := Plot[{
-          $CellContext`recFxnTime[$CellContext`x], 
-          $CellContext`itFxnTime[$CellContext`x]}, {$CellContext`x, 
-          0, $CellContext`n}, PlotRange -> {{0, 20}, {0, 100000}}, PlotLabel -> 
-         "Time Complexity", 
-         AxesLabel -> {"n", $CellContext`time}], $CellContext`recFxnTime[
-         Pattern[$CellContext`x, 
-          Blank[]]] := ((1 + Sqrt[5])/2)^$CellContext`x/
-        1000, $CellContext`itFxnTime[
-         Pattern[$CellContext`x, 
-          Blank[]]] := $CellContext`x 1000, $CellContext`spaceComplex[
-         Pattern[$CellContext`n, 
+          CloudObject`Private`recFxnTime[CloudObject`Private`x], 
+          CloudObject`Private`itFxnTime[CloudObject`Private`x]}, {
+         CloudObject`Private`x, 0, CloudObject`Private`n}, 
+         PlotRange -> {{0, 10}, {0, 100}}, PlotLabel -> "Time Complexity", 
+         AxesLabel -> {"n", CloudObject`Private`time}, PlotLegends -> Placed[
+           
+           LineLegend[{"recursive", "iterative"}, LegendFunction -> "Frame", 
+            LegendLayout -> "Column"], {{0.25, 0.5}, {0.25, 0.1}}]], 
+       CloudObject`Private`recFxnTime[
+         Pattern[CloudObject`Private`x, 
+          Blank[]]] := ((1 + Sqrt[5])/2)^CloudObject`Private`x, 
+       CloudObject`Private`itFxnTime[
+         Pattern[CloudObject`Private`x, 
+          Blank[]]] := CloudObject`Private`x, CloudObject`Private`spaceComplex[
+         Pattern[CloudObject`Private`n, 
           Blank[]]] := Plot[{
-          $CellContext`recFxnSpace[$CellContext`x], 
-          $CellContext`itFxnSpace[$CellContext`x]}, {$CellContext`x, 
-          0, $CellContext`n}, PlotRange -> {{0, 20}, {0, 100}}, PlotLabel -> 
-         "Space Complexity", 
-         AxesLabel -> {"n", $CellContext`space}], $CellContext`recFxnSpace[
-         Pattern[$CellContext`x, 
-          Blank[]]] := $CellContext`x, $CellContext`itFxnSpace[
-         Pattern[$CellContext`x, 
-          Blank[]]] := $CellContext`x, $CellContext`itTree[
-         Pattern[$CellContext`n, 
+          CloudObject`Private`recFxnSpace[CloudObject`Private`x], 
+          CloudObject`Private`itFxnSpace[CloudObject`Private`x]}, {
+         CloudObject`Private`x, 0, CloudObject`Private`n}, 
+         PlotRange -> {{0, 10}, {0, 20}}, PlotLabel -> "Space Complexity", 
+         AxesLabel -> {"n", CloudObject`Private`space}, PlotLegends -> 
+         Placed[
+           
+           LineLegend[{"recursive", "iterative"}, LegendFunction -> "Frame", 
+            LegendLayout -> "Column"], {{0.25, 0.5}, {0.25, 0.1}}]], 
+       CloudObject`Private`recFxnSpace[
+         Pattern[CloudObject`Private`x, 
+          Blank[]]] := CloudObject`Private`x, CloudObject`Private`itFxnSpace[
+         Pattern[CloudObject`Private`x, 
+          Blank[]]] := CloudObject`Private`x, CloudObject`Private`itTree[
+         Pattern[CloudObject`Private`n, 
           Blank[]]] := 
-       Module[{$CellContext`itTreeArray = {}, $CellContext`n0 = \
-$CellContext`n}, For[$CellContext`i = 2, $CellContext`i <= $CellContext`n0, 
-           Increment[$CellContext`i], 
-           AppendTo[$CellContext`itTreeArray, $CellContext`i - 
-              2 -> $CellContext`i]; 
-           AppendTo[$CellContext`itTreeArray, $CellContext`i - 
-              1 -> $CellContext`i]]; 
-         TreePlot[$CellContext`itTreeArray, Right, VertexLabeling -> True, 
+       Module[{CloudObject`Private`itTreeArray = {}, CloudObject`Private`n0 = 
+          CloudObject`Private`n}, 
+         For[CloudObject`Private`i = 2, CloudObject`Private`i <= 
+           CloudObject`Private`n0, 
+           Increment[CloudObject`Private`i], 
+           AppendTo[
+            CloudObject`Private`itTreeArray, CloudObject`Private`i - 2 -> 
+             CloudObject`Private`i]; 
+           AppendTo[
+            CloudObject`Private`itTreeArray, CloudObject`Private`i - 1 -> 
+             CloudObject`Private`i]]; 
+         TreePlot[
+          CloudObject`Private`itTreeArray, Right, VertexLabeling -> True, 
            DirectedEdges -> True, 
-           VertexRenderingFunction -> (
-            Inset[#2, #, Background -> White]& )]], $CellContext`i = 
-       8, $CellContext`recTree[
-         Pattern[$CellContext`n, 
+           VertexRenderingFunction -> (Inset[#2, #, Background -> White]& ), 
+           PlotStyle -> Hue[0.7]]], CloudObject`Private`itTree[
+         Pattern[CloudObject`Private`n, 
+          Blank[]], 
+         Pattern[CloudObject`Private`co, 
+          Blank[]]] := 
+       Module[{CloudObject`Private`itTreeArray = {}, CloudObject`Private`n0 = 
+          CloudObject`Private`n}, 
+         For[CloudObject`Private`i = 2, CloudObject`Private`i <= 
+           CloudObject`Private`n0, 
+           Increment[CloudObject`Private`i], 
+           AppendTo[
+            CloudObject`Private`itTreeArray, CloudObject`Private`i - 2 -> 
+             CloudObject`Private`i]; 
+           AppendTo[
+            CloudObject`Private`itTreeArray, CloudObject`Private`i - 1 -> 
+             CloudObject`Private`i]]; 
+         TreePlot[
+          CloudObject`Private`itTreeArray, Right, VertexLabeling -> True, 
+           DirectedEdges -> True, 
+           VertexRenderingFunction -> (Inset[#2, #, Background -> White]& ), 
+           PlotStyle -> Directive[
+             Hue[CloudObject`Private`co]]]], CloudObject`Private`i = 3, 
+       CloudObject`Private`co$$ = RGBColor[0, 0, 1], 
+       CloudObject`Private`recTree[
+         Pattern[CloudObject`Private`n$, 
           Blank[]]] := TreePlot[
-         $CellContext`j[$CellContext`n], Top, {$CellContext`n}, DirectedEdges -> 
-         True, VertexRenderingFunction -> (Inset[
+         CloudObject`Private`j[CloudObject`Private`n$], Top, {
+         CloudObject`Private`n$}, DirectedEdges -> True, 
+         VertexRenderingFunction -> (Inset[
            Row[{
-             Last[#2]}], #, Background -> White]& )], $CellContext`j[
-         Pattern[$CellContext`n, 
+             Last[#2]}], #, Background -> White]& ), PlotRangePadding -> 0, 
+         PlotStyle -> Directive[
+           PointSize[Medium], FE`CloudObject`Private`co$$221], AspectRatio -> 
+         0.7], CloudObject`Private`recTree[
+         Pattern[CloudObject`Private`n, 
+          Blank[]], 
+         Pattern[CloudObject`Private`co, 
+          Blank[]]] := TreePlot[
+         CloudObject`Private`j[CloudObject`Private`n], Top, {
+         CloudObject`Private`n}, DirectedEdges -> True, 
+         VertexRenderingFunction -> (Inset[
+           Row[{
+             Last[#2]}], #, Background -> White]& ), PlotRangePadding -> 0, 
+         PlotStyle -> Directive[
+           Hue[CloudObject`Private`co]], AspectRatio -> 0.7], 
+       Attributes[CloudObject`Private`n$] = {Temporary}, CloudObject`Private`j[
+         Pattern[CloudObject`Private`n, 
           Blank[]]] := Flatten[
-         $CellContext`f[$CellContext`n]], $CellContext`f[
-         BlankNullSequence[], 0] := {}, $CellContext`f[
-         BlankNullSequence[], 1] := {}, $CellContext`f[
-         Pattern[$CellContext`m, 
+         CloudObject`Private`f[CloudObject`Private`n]], 
+       CloudObject`Private`f[
+         BlankNullSequence[], 0] := {}, CloudObject`Private`f[
+         BlankNullSequence[], 1] := {}, CloudObject`Private`f[
+         Pattern[CloudObject`Private`m, 
           BlankNullSequence[]], 
-         Pattern[$CellContext`p, 
-          
-          Blank[]]] := {{$CellContext`m, $CellContext`p} -> {$CellContext`m, \
-$CellContext`p, $CellContext`p - 
-           1}, {$CellContext`m, $CellContext`p} -> {$CellContext`m, \
-$CellContext`p, $CellContext`p - 2}, 
-         $CellContext`f[$CellContext`m, $CellContext`p, $CellContext`p - 1], 
-         $CellContext`f[$CellContext`m, $CellContext`p, $CellContext`p - 2]}}; 
+         Pattern[CloudObject`Private`p, 
+          Blank[]]] := {{CloudObject`Private`m, CloudObject`Private`p} -> {
+          CloudObject`Private`m, CloudObject`Private`p, CloudObject`Private`p - 
+           1}, {CloudObject`Private`m, CloudObject`Private`p} -> {
+          CloudObject`Private`m, CloudObject`Private`p, CloudObject`Private`p - 
+           2}, 
+         CloudObject`Private`f[
+         CloudObject`Private`m, CloudObject`Private`p, CloudObject`Private`p - 
+          1], 
+         CloudObject`Private`f[
+         CloudObject`Private`m, CloudObject`Private`p, CloudObject`Private`p - 
+          2]}, FE`CloudObject`Private`co$$221 = 0.}; 
      Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
@@ -393,23 +532,14 @@ $CellContext`p, $CellContext`p - 2},
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{
-  3.67337848905291*^9, 3.673378902702858*^9, 3.673379141112133*^9, {
-   3.673379541350286*^9, 3.673379557540717*^9}, 3.673379828929928*^9, {
-   3.673379937730073*^9, 3.673379960856473*^9}, {3.673380019154183*^9, 
-   3.673380025418507*^9}, 3.67338014176539*^9, 3.673396227788368*^9, 
-   3.673397254743103*^9, 3.673399091703189*^9, 3.673768164997548*^9, {
-   3.6737682269363832`*^9, 3.673768243875386*^9}, {3.673768394574133*^9, 
-   3.673768406983337*^9}, {3.6737686316615143`*^9, 3.673768656083425*^9}, {
-   3.673768754601778*^9, 3.673768834353799*^9}, {3.673768870119667*^9, 
-   3.6737689111085443`*^9}, {3.6737775707126713`*^9, 3.673777573025362*^9}, {
-   3.67377761351796*^9, 3.673777640582346*^9}, 3.6737776930112457`*^9, {
-   3.6737780115302477`*^9, 3.6737780283344707`*^9}, 3.673778125850841*^9, 
-   3.6737781734294043`*^9, 3.67377831111586*^9, {3.6737784101930733`*^9, 
-   3.673778422699938*^9}, {3.673778537244513*^9, 3.673778562397414*^9}, {
-   3.673778620865365*^9, 3.673778673374765*^9}, {3.673778714886528*^9, 
-   3.673778728720809*^9}, 3.673778777055928*^9, 3.6737790558013783`*^9, 
-   3.673779108954999*^9, 3.673779172613203*^9},
- CellID->833544416]
+  3.673822360721592*^9, 3.673822405409718*^9, {3.673822442530965*^9, 
+   3.6738224715855103`*^9}, 3.6738226022506123`*^9, 3.673822704759802*^9, {
+   3.673823116225775*^9, 3.673823122056625*^9}, {3.673823157328353*^9, 
+   3.673823183481135*^9}, 3.673826576753488*^9, 3.673911253482224*^9, {
+   3.673914674576872*^9, 3.67391468963789*^9}, 3.673914909003447*^9, 
+   3.673915071147545*^9, {3.6739152868421583`*^9, 3.673915300173356*^9}, {
+   3.673915348722492*^9, 3.673915399515246*^9}},
+ CellID->1570624342]
 }, Open  ]]
 }, Open  ]],
 
@@ -574,11 +704,12 @@ Cell["", "ControlSuggestionsSection"],
 Cell[BoxData[
  TooltipBox[
   RowBox[{
-   CheckboxBox[True], Cell[" Resize Images"]}],
+   CheckboxBox[False], Cell[" Resize Images"]}],
   "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
 the orange resize handles to resize the image.\"",
   TooltipDelay->0.35]], "ControlSuggestions",
- CellChangeTimes->{{3.6737790314744864`*^9, 3.673779050449637*^9}},
+ CellChangeTimes->{{3.6737790314744864`*^9, 3.673779050449637*^9}, 
+   3.6739108721848917`*^9},
  FontFamily->"Verdana",
  CellTags->"ResizeImages"],
 
@@ -787,8 +918,33 @@ Cell[TextData[ButtonBox["Call Graphs of Fibonacci-Like Functions",
  ButtonNote->
   "http://demonstrations.wolfram.com/CallGraphsOfFibonacciLikeFunctions/"]], \
 "RelatedLinks",
- CellChangeTimes->{{3.673259439296651*^9, 3.673259478481154*^9}},
- CellID->2128840472]
+ CellChangeTimes->{{3.673259439296651*^9, 3.673259478481154*^9}, {
+  3.6739115467186527`*^9, 3.6739115467239656`*^9}, {3.6739115895408163`*^9, 
+  3.673911612788302*^9}},
+ CellID->263418410],
+
+Cell[TextData[ButtonBox["Time Complexity of Common Sorting Algorithms",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/\
+TimeComplexityOfCommonSortingAlgorithms/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/TimeComplexityOfCommonSortingAlgorithms/\
+"]], "RelatedLinks",
+ CellChangeTimes->{{3.673911616607565*^9, 3.673911636692737*^9}},
+ CellID->1202920186],
+
+Cell[TextData[ButtonBox["",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/CallGraphsOfFibonacciLikeFunctions/\
+"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/CallGraphsOfFibonacciLikeFunctions/"]], \
+"RelatedLinks",
+ CellChangeTimes->{{3.673259439296651*^9, 3.673259478481154*^9}, 
+   3.6739115467186527`*^9},
+ CellID->821453201]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -821,42 +977,42 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb",
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "AutomaticAnimation"->{
-  Cell[26468, 666, 1464, 31, 29, "ControlSuggestions",
-   CellTags->"AutomaticAnimation"]},
- "BookmarkAnimation"->{
-  Cell[27935, 699, 908, 21, 29, "ControlSuggestions",
-   CellTags->"BookmarkAnimation"]},
- "CreateAndDeleteLocators"->{
-  Cell[24609, 615, 637, 15, 29, "ControlSuggestions",
-   CellTags->"CreateAndDeleteLocators"]},
- "DragLocators"->{
-  Cell[24266, 602, 340, 11, 29, "ControlSuggestions",
-   CellTags->"DragLocators"]},
- "GamepadControls"->{
-  Cell[26096, 655, 369, 9, 29, "ControlSuggestions",
-   CellTags->"GamepadControls"]},
  "ResizeImages"->{
-  Cell[23203, 573, 379, 9, 29, "ControlSuggestions",
+  Cell[29613, 703, 408, 10, 29, "ControlSuggestions",
    CellTags->"ResizeImages"]},
  "RotateAndZoomIn3D"->{
-  Cell[23585, 584, 678, 16, 29, "ControlSuggestions",
+  Cell[30024, 715, 678, 16, 29, "ControlSuggestions",
    CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[30705, 733, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[31048, 746, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
  "SliderZoom"->{
-  Cell[25249, 632, 844, 21, 29, "ControlSuggestions",
-   CellTags->"SliderZoom"]}
+  Cell[31688, 763, 844, 21, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[32535, 786, 369, 9, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[32907, 797, 1464, 31, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[34374, 830, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"AutomaticAnimation", 31865, 823},
- {"BookmarkAnimation", 31981, 826},
- {"CreateAndDeleteLocators", 32101, 829},
- {"DragLocators", 32216, 832},
- {"GamepadControls", 32323, 835},
- {"ResizeImages", 32429, 838},
- {"RotateAndZoomIn3D", 32537, 841},
- {"SliderZoom", 32644, 844}
+ {"ResizeImages", 39194, 979},
+ {"RotateAndZoomIn3D", 39303, 982},
+ {"DragLocators", 39412, 985},
+ {"CreateAndDeleteLocators", 39527, 988},
+ {"SliderZoom", 39640, 991},
+ {"GamepadControls", 39745, 994},
+ {"AutomaticAnimation", 39857, 997},
+ {"BookmarkAnimation", 39973, 1000}
  }
 *)
 (*NotebookFileOutline
@@ -865,94 +1021,98 @@ Cell[CellGroupData[{
 Cell[580, 22, 187, 2, 76, "DemoTitle"],
 Cell[CellGroupData[{
 Cell[792, 28, 33, 0, 275, "InitializationSection"],
-Cell[828, 30, 7423, 196, 408, "Input",
+Cell[828, 30, 10065, 251, 502, "Input",
  InitializationCell->True,
  CellID->428081845]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8288, 231, 29, 0, 243, "ManipulateSection"],
+Cell[10930, 286, 29, 0, 243, "ManipulateSection"],
 Cell[CellGroupData[{
-Cell[8342, 235, 2671, 55, 73, "Input"],
-Cell[11016, 292, 6146, 119, 431, "Output",
- CellID->833544416]
+Cell[10984, 290, 3715, 72, 73, "Input"],
+Cell[14702, 364, 8870, 177, 459, "Output",
+ CellID->1570624342]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17211, 417, 36, 0, 181, "ManipulateCaptionSection"],
-Cell[17250, 419, 983, 14, 55, "ManipulateCaption"]
+Cell[23621, 547, 36, 0, 181, "ManipulateCaptionSection"],
+Cell[23660, 549, 983, 14, 55, "ManipulateCaption"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18270, 438, 28, 0, 179, "ThumbnailSection"],
-Cell[18301, 440, 1242, 34, 230, "Output"]
+Cell[24680, 568, 28, 0, 179, "ThumbnailSection"],
+Cell[24711, 570, 1242, 34, 230, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19580, 479, 28, 0, 149, "SnapshotsSection"],
-Cell[19611, 481, 1241, 34, 230, "Output"]
+Cell[25990, 609, 28, 0, 149, "SnapshotsSection"],
+Cell[26021, 611, 1241, 34, 230, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20889, 520, 26, 0, 357, "DetailsSection"],
-Cell[20918, 522, 781, 12, 55, "DetailNotes",
+Cell[27299, 650, 26, 0, 357, "DetailsSection"],
+Cell[27328, 652, 781, 12, 55, "DetailNotes",
  CellID->1523787809],
-Cell[21702, 536, 665, 11, 39, "DetailNotes",
+Cell[28112, 666, 665, 11, 39, "DetailNotes",
  CellID->1626041038],
-Cell[22370, 549, 357, 6, 23, "DetailNotes",
+Cell[28780, 679, 357, 6, 23, "DetailNotes",
  CellID->1859365000],
-Cell[22730, 557, 396, 9, 23, "DetailNotes",
+Cell[29140, 687, 396, 9, 23, "DetailNotes",
  CellID->1343130830]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23163, 571, 37, 0, 131, "ControlSuggestionsSection"],
-Cell[23203, 573, 379, 9, 29, "ControlSuggestions",
+Cell[29573, 701, 37, 0, 131, "ControlSuggestionsSection"],
+Cell[29613, 703, 408, 10, 29, "ControlSuggestions",
  CellTags->"ResizeImages"],
-Cell[23585, 584, 678, 16, 29, "ControlSuggestions",
+Cell[30024, 715, 678, 16, 29, "ControlSuggestions",
  CellTags->"RotateAndZoomIn3D"],
-Cell[24266, 602, 340, 11, 29, "ControlSuggestions",
+Cell[30705, 733, 340, 11, 29, "ControlSuggestions",
  CellTags->"DragLocators"],
-Cell[24609, 615, 637, 15, 29, "ControlSuggestions",
+Cell[31048, 746, 637, 15, 29, "ControlSuggestions",
  CellTags->"CreateAndDeleteLocators"],
-Cell[25249, 632, 844, 21, 29, "ControlSuggestions",
+Cell[31688, 763, 844, 21, 29, "ControlSuggestions",
  CellTags->"SliderZoom"],
-Cell[26096, 655, 369, 9, 29, "ControlSuggestions",
+Cell[32535, 786, 369, 9, 29, "ControlSuggestions",
  CellTags->"GamepadControls"],
-Cell[26468, 666, 1464, 31, 29, "ControlSuggestions",
+Cell[32907, 797, 1464, 31, 29, "ControlSuggestions",
  CellTags->"AutomaticAnimation"],
-Cell[27935, 699, 908, 21, 29, "ControlSuggestions",
+Cell[34374, 830, 908, 21, 29, "ControlSuggestions",
  CellTags->"BookmarkAnimation"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28880, 725, 30, 0, 165, "SearchTermsSection"],
-Cell[28913, 727, 119, 2, 23, "SearchTerms",
+Cell[35319, 856, 30, 0, 165, "SearchTermsSection"],
+Cell[35352, 858, 119, 2, 23, "SearchTerms",
  CellID->1771562424],
-Cell[29035, 731, 121, 2, 23, "SearchTerms",
+Cell[35474, 862, 121, 2, 23, "SearchTerms",
  CellID->1740548482],
-Cell[29159, 735, 119, 2, 23, "SearchTerms",
+Cell[35598, 866, 119, 2, 23, "SearchTerms",
  CellID->1026981659],
-Cell[29281, 739, 120, 2, 23, "SearchTerms",
+Cell[35720, 870, 120, 2, 23, "SearchTerms",
  CellID->726700763],
-Cell[29404, 743, 116, 2, 23, "SearchTerms",
+Cell[35843, 874, 116, 2, 23, "SearchTerms",
  CellID->14970670],
-Cell[29523, 747, 124, 2, 23, "SearchTerms",
+Cell[35962, 878, 124, 2, 23, "SearchTerms",
  CellID->1758405254],
-Cell[29650, 751, 127, 2, 23, "SearchTerms",
+Cell[36089, 882, 127, 2, 23, "SearchTerms",
  CellID->1069681446],
-Cell[29780, 755, 126, 2, 23, "SearchTerms",
+Cell[36219, 886, 126, 2, 23, "SearchTerms",
  CellID->1925164264],
-Cell[29909, 759, 116, 2, 23, "SearchTerms",
+Cell[36348, 890, 116, 2, 23, "SearchTerms",
  CellID->212228433],
-Cell[30028, 763, 119, 2, 23, "SearchTerms",
+Cell[36467, 894, 119, 2, 23, "SearchTerms",
  CellID->1412851291]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30184, 770, 31, 0, 149, "RelatedLinksSection"],
-Cell[30218, 772, 321, 7, 23, "RelatedLinks",
+Cell[36623, 901, 31, 0, 149, "RelatedLinksSection"],
+Cell[36657, 903, 321, 7, 23, "RelatedLinks",
  CellID->1809783138],
-Cell[30542, 781, 392, 9, 23, "RelatedLinks",
- CellID->2128840472]
+Cell[36981, 912, 495, 11, 23, "RelatedLinks",
+ CellID->263418410],
+Cell[37479, 925, 407, 9, 23, "RelatedLinks",
+ CellID->1202920186],
+Cell[37889, 936, 380, 10, 23, "RelatedLinks",
+ CellID->821453201]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30971, 795, 25, 0, 149, "AuthorSection"],
-Cell[30999, 797, 160, 2, 23, "Author"],
-Cell[31162, 801, 288, 6, 23, "Author",
+Cell[38306, 951, 25, 0, 149, "AuthorSection"],
+Cell[38334, 953, 160, 2, 23, "Author"],
+Cell[38497, 957, 288, 6, 23, "Author",
  CellID->1585153641]
 }, Open  ]]
 }, Open  ]]
